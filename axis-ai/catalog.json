@@ -1,0 +1,60 @@
+{
+  "version": "2026-05-21",
+  "models": [
+    {
+      "id": "anthropic/claude-sonnet-4",
+      "provider": "anthropic",
+      "display_name": "Claude Sonnet 4",
+      "context_window": 200000,
+      "input_cost_per_million": 300,
+      "output_cost_per_million": 1500,
+      "capabilities": ["tools", "vision", "long-context"],
+      "available_via": ["openrouter"],
+      "status": "active"
+    },
+    {
+      "id": "anthropic/claude-haiku-4-5",
+      "provider": "anthropic",
+      "display_name": "Claude Haiku 4.5",
+      "context_window": 200000,
+      "input_cost_per_million": 100,
+      "output_cost_per_million": 500,
+      "capabilities": ["tools"],
+      "available_via": ["openrouter"],
+      "status": "active"
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "provider": "openai",
+      "display_name": "GPT-4o Mini",
+      "context_window": 128000,
+      "input_cost_per_million": 15,
+      "output_cost_per_million": 60,
+      "capabilities": ["tools", "vision"],
+      "available_via": ["openrouter"],
+      "status": "active"
+    },
+    {
+      "id": "google/gemini-2.0-flash-exp",
+      "provider": "google",
+      "display_name": "Gemini 2.0 Flash",
+      "context_window": 1000000,
+      "input_cost_per_million": 10,
+      "output_cost_per_million": 40,
+      "capabilities": ["tools", "vision", "long-context"],
+      "available_via": ["openrouter"],
+      "status": "active"
+    },
+    {
+      "id": "meta-llama/llama-3.3-70b-instruct",
+      "provider": "meta",
+      "display_name": "Llama 3.3 70B",
+      "context_window": 128000,
+      "input_cost_per_million": 12,
+      "output_cost_per_million": 30,
+      "capabilities": ["tools"],
+      "available_via": ["openrouter"],
+      "status": "active"
+    }
+  ]
+}
