@@ -63,7 +63,7 @@
       "context_window": 128000,
       "input_cost_per_million": 15, "output_cost_per_million": 60,
       "capabilities": ["tools", "vision"],
-      "available_via": ["openrouter"],
+      "available_via": ["openrouter", "openai"],
       "status": "active"
     },
     {
