@@ -1,1 +1,42 @@
+---
+import "../styles/global.css";
+import Hero from "../components/Hero";
+import LoopDiagram from "../components/LoopDiagram";
+import Pillars from "../components/Pillars";
+import Downloads from "../components/Downloads";
+import Footer from "../components/Footer";
+import { fetchLatestRelease, extractDownloads } from "../lib/github";
 
+const release = await fetchLatestRelease();
+const downloads = extractDownloads(release);
+const tag = release?.tag_name ?? "—";
+const date = release !== null
+  ? new Date(release.published_at).toISOString().slice(0, 10)
+  : "—";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Axis-AI · Your personal AI lab</title>
+    <meta name="description" content="Test agents in parallel. Freeze the winners. Build a library of AI workflows you actually use." />
+    <meta name="robots" content="noindex,nofollow" />
+  </head>
+  <body>
+    <main>
+      <Hero client:load />
+      <LoopDiagram client:visible />
+      <Pillars client:visible />
+      <Downloads client:visible downloads={downloads} releaseTag={tag} releaseDate={date} />
+    </main>
+    <Footer />
+  </body>
+</html>
